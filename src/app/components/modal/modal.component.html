@@ -1,36 +1,32 @@
-<div mat-dialog-title>
-  <h1>Contact form</h1>
-</div>
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <div mat-dialog-content class="content">
+<h1>Contact Form</h1>
+<form [formGroup]="contact_Form" (ngSubmit)="onSubmit()">
+  <div class="content">
     <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label>
-          Name
-        </mat-label>
+        <mat-label>Name</mat-label>
         <input matInput type="text" formControlName="name">
       </mat-form-field>
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label>
-          Email
-        </mat-label>
-        <input matInput type="text" formControlName="email">
+        <mat-label>Selecciona un barbero</mat-label>
+        <mat-select formControlName="barber">
+          <mat-option *ngFor="let barber of barbers" [value]="barber">{{ barber }}</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label>
-          Phone
-        </mat-label>
-        <input matInput type="text" formControlName="phone">
+        <mat-label>Selecciona una hora</mat-label>
+        <input matInput [ngxMatTimepicker]="picker" formControlName="hour" readonly>
+        <ngx-mat-timepicker #picker></ngx-mat-timepicker>
       </mat-form-field>
     </div>
-  </div>
-  <div mat-dialog-actions class="action">
-    <button mat-raised-button [mat-dialog-close]="false" type="button">Cancel</button>
-    <button [disabled]="!contactForm.valid" mat-raised-button color="primary" type="submit">{{getTitle()}}</button>
-  </div>
 
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!contact_Form.valid">
+        Submit
+      </button>
+    </div>
+  </div>
 </form>

@@ -7,7 +7,7 @@ import { ModalService } from '@components/modal/modal.service';
 import { ToolbarComponent } from '@components/toolbar/toolbar.component';
 
 
-const MATERIAL_MODULES = [MatCardModule, MatProgressSpinnerModule] 
+const MATERIAL_MODULES = [MatCardModule, MatProgressSpinnerModule]
 
 @Component({
   selector: 'app-root',
@@ -23,5 +23,5 @@ export class AppComponent {
   onClickNewContact(): void {
     this._modalSvc.openModal<ModalComponent>(ModalComponent);
   }
-  
+
 }

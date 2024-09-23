@@ -21,6 +21,7 @@ export class ModalComponent implements OnInit {
 
   contactForm!: FormGroup;
 
+
   private readonly _fb = inject(FormBuilder);
   private readonly _matDialog = inject(MAT_DIALOG_DATA);
   private readonly _contactSvc = inject(ContactService);
@@ -36,7 +37,7 @@ export class ModalComponent implements OnInit {
   async onSubmit() {
     let message = APP_CONSTANTS.MESSAGES.CONTACT_UPDATED;
     const contact = this.contactForm.value;
- 
+
     if (this._matDialog.data) {
       this._contactSvc.updateContact(this._matDialog.data.id, contact);
     } else {

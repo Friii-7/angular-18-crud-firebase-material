@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class ContactService {
   private readonly _firestore = inject(Firestore);
-  private readonly _contactCollection = collection(this._firestore, APP_CONSTANTS.COLLECTION_NAME);   
-  
+  private readonly _contactCollection = collection(this._firestore, APP_CONSTANTS.COLLECTION_NAME);
+
 
   newContact(contact:Partial<Contact>):Promise<DocumentReference<DocumentData, DocumentData>> {
     return addDoc(this._contactCollection, {
@@ -37,9 +37,11 @@ export class ContactService {
   deleteContact(id: string):void {
     const docRef = this._getDocRef(id);
     deleteDoc(docRef);
-  } 
+  }
 
   private _getDocRef(id: string) {
     return doc(this._firestore, APP_CONSTANTS.COLLECTION_NAME, id);
   }
+
+
 }

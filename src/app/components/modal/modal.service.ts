@@ -6,7 +6,7 @@ import { Contact } from '@features/contacts/contact.interfaces';
 
 @Injectable({providedIn: 'root'})
 export class ModalService {
-  
+
   private readonly _dialog = inject(MatDialog);
 
   openModal<CT, T = Contact>(componentRef: ComponentType<CT>, data?: T, isEditing = false ): void {
@@ -22,5 +22,5 @@ export class ModalService {
   closeModal(): void{
     this._dialog.closeAll();
   }
-  
+
 }

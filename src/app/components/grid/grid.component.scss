@@ -8,3 +8,57 @@
   border-color: currentColor;
   background-color: antiquewhite;
 }
+
+/* Ajustes generales */
+section {
+  padding: 10px;
+}
+
+/* Asegurar que el contenido de la tabla no se desborde en pantallas pequeñas */
+.table-container {
+  overflow-x: auto; /* Permite scroll horizontal si es necesario */
+}
+
+/* Hacer que las celdas y encabezados sean más compactos */
+table th, table td {
+  padding: 8px;
+  text-align: left;
+  font-size: 1rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+}
+
+/* Ajustes específicos para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Reduce el tamaño del título en móviles */
+  }
+
+  /* Ajusta los campos del formulario */
+  mat-form-field {
+    width: 100%; /* Hacer que los campos del formulario ocupen todo el ancho disponible */
+  }
+
+  /* Reduce los márgenes y el tamaño del botón en pantallas móviles */
+  .actions {
+    margin-top: 15px;
+  }
+
+  button {
+    width: 100%; /* El botón de enviar ocupará todo el ancho del contenedor */
+  }
+
+  /* Ajustes de la tabla */
+  table th, table td {
+    padding: 6px;
+    font-size: 0.875rem; /* Reduce el tamaño de fuente en pantallas móviles */
+  }
+
+  /* Ajusta el paginador en móviles */
+  mat-paginator {
+    font-size: 0.75rem;
+  }
+
+  /* Botones de acción más pequeños */
+  button mat-icon {
+    font-size: 1rem;
+  }
+}

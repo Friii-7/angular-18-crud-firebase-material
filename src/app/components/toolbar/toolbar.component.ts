@@ -14,14 +14,14 @@ const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </a>
-        
+
       <a mat-button routerLink="/contacts" >
         <mat-icon>list_alt</mat-icon>
-        <span>Contacts</span></a>
+        <span>Lista Agendado</span></a>
       <span class="spacer"></span>
       <a mat-button (click)="emitClick()" >
         <mat-icon>add_box</mat-icon>
-        <span>New</span>
+        <span>Agendar Cita</span>
       </a>
     </mat-toolbar>
   `,

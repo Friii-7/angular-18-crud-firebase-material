@@ -60,9 +60,12 @@ export class ModalComponent implements OnInit {
 
   private _buildForm(): void {
     this.contact_Form = this._fb.nonNullable.group({
-      name: ['', Validators.required],
-      barber: ['', Validators.required],
-      hour: ['', Validators.required],
+      Name: ['', Validators.required],
+      Barber: ['', Validators.required],
+      Hour: ['', Validators.required],
     });
   }
+
+
+
 }

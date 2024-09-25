@@ -20,8 +20,8 @@ import { tap } from 'rxjs';
 export class ListComponent implements OnInit {
   contacts = signal<Contact[]>([]);
 
-  displayedColumns: ColumnKeys<Contact> = ['name', 'barber', 'hour', 'action'];
-  sortables: ColumnKeys<Contact> = ['name', 'barber', 'hour'];
+  displayedColumns: ColumnKeys<Contact> = ['Name', 'Barber', 'Hour', 'action'];
+  sortables: ColumnKeys<Contact> = ['Name', 'Barber', 'Hour'];
 
 
   private readonly _contactSvc = inject(ContactService);

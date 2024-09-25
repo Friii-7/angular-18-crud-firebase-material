@@ -4,9 +4,9 @@ export type ColumnKeys<T> = Array<keyof T>;
 
 export interface Contact {
   id: number;
-  name: string;
-  barber: string;
-  hour: number;
+  Name: string;
+  Barber: string;
+  Hour: number;
   action: string;
   created: Timestamp;
   updated: Timestamp;

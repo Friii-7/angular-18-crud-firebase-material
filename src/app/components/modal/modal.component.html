@@ -1,32 +1,47 @@
-<h1>Contact Form</h1>
+<h1 class="form-title">Agendar Cita</h1>
+
 <form [formGroup]="contact_Form" (ngSubmit)="onSubmit()">
-  <div class="content">
-    <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput type="text" formControlName="name">
-      </mat-form-field>
-    </div>
-    <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Selecciona un barbero</mat-label>
-        <mat-select formControlName="barber">
-          <mat-option *ngFor="let barber of barbers" [value]="barber">{{ barber }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Selecciona una hora</mat-label>
-        <input matInput [ngxMatTimepicker]="picker" formControlName="hour" readonly>
-        <ngx-mat-timepicker #picker></ngx-mat-timepicker>
-      </mat-form-field>
+  <div class="form-content">
+    <!-- Campo de Nombre -->
+    <div class="row mb-3">
+      <div class="col-12">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Ingresa tu nombre">
+        </mat-form-field>
+      </div>
     </div>
 
-    <div class="actions">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!contact_Form.valid">
-        Submit
-      </button>
+    <!-- Selección de Barbero -->
+    <div class="row mb-3">
+      <div class="col-12">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Selecciona un Barbero</mat-label>
+          <mat-select formControlName="barber">
+            <mat-option *ngFor="let barber of barbers" [value]="barber">{{ barber }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Selección de Hora -->
+    <div class="row mb-3">
+      <div class="col-12">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Selecciona una hora</mat-label>
+          <input matInput [ngxMatTimepicker]="picker" formControlName="hour" readonly placeholder="Selecciona una hora">
+          <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Botón de Envío -->
+    <div class="row mb-3">
+      <div class="col-12 text-center">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!contact_Form.valid">
+          Enviar
+        </button>
+      </div>
     </div>
   </div>
 </form>

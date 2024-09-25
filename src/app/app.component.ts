@@ -4,7 +4,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterOutlet } from '@angular/router';
 import { ModalComponent } from '@components/modal/modal.component';
 import { ModalService } from '@components/modal/modal.service';
-import { ToolbarComponent } from '@components/toolbar/toolbar.component';
+import {  NavbarComponent } from '@components/toolbar/toolbar.component';
 
 
 const MATERIAL_MODULES = [MatCardModule, MatProgressSpinnerModule]
@@ -12,7 +12,7 @@ const MATERIAL_MODULES = [MatCardModule, MatProgressSpinnerModule]
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ToolbarComponent, MATERIAL_MODULES],
+  imports: [RouterOutlet, MATERIAL_MODULES, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
